@@ -1,0 +1,32 @@
+
+public class Arraydsa {
+//here for printing the array elements
+	public void printarray(int[] arr){
+		int n=arr.length;
+		for(int i=0;i<n;i++) {
+			System.out.print(i+" ");
+			System.out.println(arr[i]+ " ");
+		}
+		System.out.println();
+	}
+	public void myarray(){
+		int[] sub=new int[3];
+		sub[0]=5;
+		sub[1]=0;
+		sub[2]=7;
+//here u can change the elements dynamically
+		printarray(sub);
+	}
+
+	
+	
+		
+	
+
+	public static void main(String[] args) {
+		Arraydsa a=new Arraydsa();
+		a.myarray();
+		
+	}
+
+}
