@@ -1,0 +1,45 @@
+
+public class Arraydsa {
+//here for printing the array elements
+	public void printarray(int[] arr){
+		int n=arr.length;
+		for(int i=0;i<n;i++) {
+			System.out.print(i+" ");
+			System.out.println(arr[i]+ " ");
+		}
+		System.out.println();
+	}
+ 
+	public static int[] removeEven(int[] arr2) {
+		int m=arr2.length;
+		int odd=0;
+		for(int k=0;k<m;k++) {
+			if(arr2[k]%2!=0) {
+				odd++;
+				}
+		}
+		int[] result=new int[odd];
+		int idx=0;
+		for(int j=0;j<m;j++) {
+			
+			if(arr2[j]%2!=0) {
+				result[idx]=arr2[j];
+				idx++;
+			}
+				
+			}
+		return result;
+						
+	}
+	
+	public static void main(String[] args) {
+		Arraydsa a=new Arraydsa();
+		int[] big= {1,2,3,4,5,6,7,8,9,22};
+		
+		int[] result=removeEven(big);
+		a.printarray(result);
+		
+		
+	}
+
+}
