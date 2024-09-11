@@ -1,0 +1,56 @@
+import java.util.Arrays;
+
+public class Arraygithhub {
+
+	public static void main(String[] args) {
+		//to initialise
+		String[] food= {"chapathi","rice","jello","biryani"};
+		//to initialise and to declare
+		int[] numbers= new int[3];
+		//to update the contents
+		numbers[0]=1;
+		numbers[1]=5;
+		numbers[2]=9;
+		//to print the array contents
+		for(int i=0;i<numbers.length;i++) {
+			System.out.println(numbers[i]);
+		}
+		//to know the length
+		System.out.println(numbers.length);
+		System.out.println(food.length);
+		// to sort the numbers in an array
+		Arrays.sort(numbers);
+		//to fill entire with one content
+		Arrays.fill(numbers,2);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		//real world example is a shopping app
+//		class Shopping{
+//		int cust.id;
+//		int custnummber;
+//		String paymentscategory;
+//		}
+//		//creating ann array of payments category containing various options such as bills,elcetricity etc
+//		Shopping[] app=new Shopping[3];
+//		}
+		//2d array
+		String[][] tictac=new String[3][3];
+		//3d array--used to define colour of a pixel which includes red ,green and blue components
+		String[][][] colourspixels=new String[12][34][56];
+		
+		
+		
+
+	
+	}
+}
