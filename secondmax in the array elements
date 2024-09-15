@@ -1,0 +1,25 @@
+package arrays;
+
+public class Thirdset {
+	public int Secondm(int[] arr) {
+		int max=Integer.MIN_VALUE;
+		int secon=Integer.MIN_VALUE;
+		for(int i=0;i<arr.length;i++) {
+			if(arr[i]>max) {
+				secon=max;
+				max=arr[i];
+				}
+			else if(arr[i]>secon && arr[i]<=max) {
+				secon=arr[i];
+			}
+		}
+		return secon;
+	}
+
+	public static void main(String[] args) {
+		Thirdset ts=new Thirdset();
+		System.out.println(ts.Secondm(new int[] {2,3,4,88,9,5,77,8}));
+		
+	}
+
+}
