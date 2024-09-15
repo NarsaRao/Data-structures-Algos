@@ -1,0 +1,39 @@
+package arrays;
+
+public class SecondArray {
+	//to reverse an array of elements.
+	public void ReverseArr(int[] arr,int start,int end) {
+		while(start<end) {
+			int temp=arr[start];
+			arr[start]=arr[end];
+			arr[end]=temp;
+			start++;
+			end--;
+		}
+		for(int i=0;i<arr.length;i++) {
+			System.out.println(arr[i]+",");
+		}
+	}
+		////to find the minimmum number in the fgiven eemmst
+		public int Minim(int[] arr2) {
+			int min=arr2[0];
+			for(int j=1;j<arr2.length;j++) {
+				if(arr2[j]<min) {
+					min=arr2[j];
+				}
+			}
+			return min;
+		}
+	
+
+	public static void main(String[] args) {
+		SecondArray sa=new SecondArray();
+		int[] exp={2,7,33,5,7,6,5};
+		sa.ReverseArr(exp,0,exp.length-1);
+		System.out.println("the min is"+" "+sa.Minim(new int[]{5,7,3,6,7,3,1,2}));
+		
+		
+	
+	}
+
+}
