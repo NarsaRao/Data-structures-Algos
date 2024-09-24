@@ -1,0 +1,37 @@
+class Solution {
+    public void sortColors(int[] nums) {
+        int c1=0;
+        int c2=0;
+        int c3=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]==0){
+                c1++;
+            }
+            else if(nums[i]==1){
+                c2++;
+            }
+            else{
+                c3++;
+            }
+        }
+        int[] fina=new int[c1+c2+c3];
+        int k=0;
+        for(int j=0;j<c1;j++){
+            fina[k]=0;
+            k++;
+        }
+        for(int l=c1;l<c1+c2;l++){
+            fina[k]=1;
+            k++;
+        }
+        for(int h=c1+c2;h<nums.length;h++){
+            fina[k]=2;
+            k++;
+        }
+        for(int p=0;p<nums.length;p++){
+            nums[p]=fina[p];
+        }
+        
+        
+    }
+}
