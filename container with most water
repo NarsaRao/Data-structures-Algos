@@ -1,0 +1,61 @@
+class Solution {
+    public int maxArea(int[] height) {
+        int max = 0;
+        int left = 0;
+        int right = height.length - 1;
+
+        while (left < right) {
+            int l = right - left; // width
+            int b = Math.min(height[left], height[right]); // height
+            int area = l * b; // area calculation
+
+            if (area > max) {
+                max = area; // update max area
+            }
+
+            // Move the pointer pointing to the shorter line
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+        
+        return max;   
+    }
+}
+////////////alternate but not optimal 
+package arrays;
+
+public class Solution {
+
+	
+		    public int maxArea(int[] height) {
+		        int max = 0;
+
+		        for (int i = 0; i < height.length; i++) {
+		            for (int j = i + 1; j < height.length; j++) {
+		                int l = j - i; // width
+		                int b = Math.min(height[i], height[j]); // height
+		                int area = l * b; // area calculation
+
+		                if (area > max) {
+		                    max = area; // update max area
+		                }
+		            }
+		        }
+
+		        return max;   
+		    }
+
+		    public static void main(String[] args) {
+		        Solution solution = new Solution();
+		        int[] heights = {8, 7, 2, 1};
+		        int result = solution.maxArea(heights);
+		        System.out.println("Maximum area: " + result); // Should print the maximum area
+		    }
+		
+
+	
+
+}
