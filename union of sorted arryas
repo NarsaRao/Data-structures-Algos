@@ -1,0 +1,23 @@
+
+import java.util.HashSet;
+class Solution {
+    public int[] unionArray(int[] nums1, int[] nums2) {
+        HashSet<Integer> h=new HashSet<>();
+        ArrayList<Integer> a=new ArrayList<>();
+        for(int i=0;i<nums1.length;i++){
+            h.add(nums1[i]);
+        }
+        for(int i=0;i<nums2.length;i++){
+            h.add(nums2[i]);
+        }
+        for(int i:h){
+            a.add(i);
+        }
+        int[]  arr=new int[a.size()];
+       
+     for(int i=0;i<a.size();i++){
+        arr[i] = a.get(i);
+     } 
+      return arr;  
+    }
+}
