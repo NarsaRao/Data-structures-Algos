@@ -1,0 +1,157 @@
+package arrays;
+class Node{
+	int data;
+	Node next;
+	Node(int data1,Node next1){
+		this.data=data1;
+		this.next=next1;
+		}
+	Node(int data1){
+		this.data=data1;
+		this.next=null;
+		
+	}
+}
+class Linked {
+	//to convert an array into a linked list
+	static Node arrtoll(int[] arr) {
+		Node head=new Node(arr[0]);
+		Node mover=head;
+		for(int i=1;i<arr.length;i++) {
+			Node temp=new Node(arr[i]);
+			mover.next=temp;
+			mover=temp;
+		}
+		return head;
+	}
+	//to delete the head of a linked list
+	static Node delh(Node head) {
+		if(head==null) return head;
+		head=head.next;
+	return head;	
+		
+	}
+	//to delte the tail of the lined list
+	static Node delt(Node head) {
+		if(head==null || head.next==null) return null;
+		Node temp=head;
+		while(temp.next.next!=null) {
+			temp=temp.next;
+			}
+		temp.next=null;
+		return head;
+		
+	}
+	//to delre the node At the kth position
+	static Node delp(Node head,int k) {
+		if(head==null || head.next==null) return head;
+		Node temp=head;
+		int c=0;
+		Node prev=null;
+		while(temp!=null) {
+			c++;
+			if(c==k) {
+				prev.next=prev.next.next;
+				break;
+			}
+			prev=temp;
+			temp=temp.next;
+		}
+		return head;
+		
+	}
+	// to delete the value
+	static Node delv(Node head,int val) {
+		if(head==null) return null;
+		if(head.data==val) {
+			head=head.next;
+			return head;
+		}
+		Node temp=head;
+
+		Node prev=null;
+		while(temp!=null) {
+			
+			if(temp.data==val) {
+				prev.next=prev.next.next;
+				break;
+			}
+			prev=temp;
+			temp=temp.next;
+			
+		}
+		return head;
+	}
+	//to insert a node in the linked list at start
+	static Node insh(int val,Node head) {
+		Node temp=new Node(val,head);
+		return temp;
+	}
+	/// to insert a node in the linked list at tail
+	static Node inst(int val,Node head) {
+		Node temp=head;
+		while(temp.next!=null) {
+			temp=temp.next;
+		}
+		Node las=new Node(100);
+		temp.next=las;
+		return head;
+	}
+	///////////////////////////////to insert at a postion
+	static Node inp(int val,Node head,int k) {
+		if(head==null) {
+			if(k==1) return new Node(val);
+			return null;
+		}
+		if(k==1) {
+			Node temp=new Node(val,head); 
+			return head;
+		}
+		Node temp=head;
+		int count=0;
+		while(temp!=null) {
+			count++;
+			if(count==k-1) {
+				Node in=new Node(val);
+				in.next=temp.next;
+				temp.next=in;
+				break;
+				
+			}
+			temp=temp.next;
+			
+		}
+		return head;
+	}
+	// too prit the ll
+	static  void  prit(Node head) {
+		
+		Node temp2=head;
+        while(temp2!=null) {
+			
+			System.out.print(temp2.data +" ");
+			temp2=temp2.next;
+	
+			}
+	}
+	//main  method
+
+	public static void main(String[] args) {
+		int[] arr= {2,3,5,6};
+		int[] arr2= {3,3,4,6,8,5,3,2};
+		Node n=new Node(arr[0],null);
+		System.out.println(n.data);
+		Node head=arrtoll(arr);
+		Node head2=arrtoll(arr2);
+		prit(head);
+		
+		
+		
+	
+		
+		
+		
+
+	}
+
+}
