@@ -13,12 +13,12 @@ class Solution {
         int prev=Integer.MIN_VALUE;
         String[] arr=s.split("\\s+"); 
         for(int i=0;i<arr.length;i++){
-            if(chec(arr[i])){
+          if(arr[i].matches("\\d+")){
 
            int val=Integer.parseInt(arr[i]);
            if(val<=prev) return false;
            prev=val;
-            }
+          } 
         }
         return true;
     }
