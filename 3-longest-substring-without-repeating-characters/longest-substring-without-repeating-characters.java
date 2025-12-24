@@ -9,7 +9,8 @@ class Solution {
                 int le=j-i+1;
                 ma=Math.max(le,ma);
             }
+
         }
-       return ma; 
+        return ma;
     }
 }
